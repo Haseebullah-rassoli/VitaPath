@@ -19,15 +19,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Build static site
         env:
-          NEXT_PUBLIC_SUPABASE_URL: https://placeholder.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: placeholder-public-key
+          NEXT_PUBLIC_SUPABASE_URL: https://hudtdmerjzqmyvgwajub.supabase.co
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_Drg_HlywJ6xAqhwUwyWBZA_KwNotfMh
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
