@@ -21,7 +21,7 @@ export default function Home(){
         <span className="pill">GLOBAL PLATFORM FOR STUDENTS & PROFESSIONALS</span>
         <h1>Your path to a <em>brighter future.</em></h1>
         <p>Build professional resumes, cover letters and scholarship documents with modern guidance for international study and career opportunities.</p>
-        <div className="heroActions"><Link href="/login" className="cta">Create your resume <b>→</b></Link><a href="#tools" className="secondary">Explore tools</a></div>
+        <div className="heroActions"><Link href="/builder" className="cta">Create your resume <b>→</b></Link><a href="#tools" className="secondary">Explore tools</a></div>
         <div className="trust"><span>✓ Free to start</span><span>◎ Global formats</span><span>◇ Privacy-minded</span><span>⚡ Fast & simple</span></div>
       </div>
       <div className="heroVisual" aria-label="VitaPath global career platform">
@@ -39,7 +39,7 @@ export default function Home(){
 
     <section id="tools" className="toolsSection">
       <div className="sectionHead"><span>ONE PROFILE · MULTIPLE DOCUMENTS</span><h2>Everything you need in one place</h2><p>Professional tools designed around real international applications.</p></div>
-      <div className="toolGrid">{tools.map(([title,text,action],i)=><article key={title} className={"tool t"+(i+1)}><div className="icon">{["▤","✉","♜","✎","✓"][i]}</div><h3>{title}</h3><p>{text}</p><Link href="/login">{action} →</Link></article>)}</div>
+      <div className="toolGrid">{tools.map(([title,text,action],i)=><article key={title} className={"tool t"+(i+1)}><div className="icon">{["▤","✉","♜","✎","✓"][i]}</div><h3>{title}</h3><p>{text}</p><Link href={i===0?"/builder":"/login"}>{action} →</Link></article>)}</div>
     </section>
 
     <section id="global" className="globalStrip"><div><b>International</b><span>Built for global applications</span></div><div><b>5 core tools</b><span>Career & study documents</span></div><div><b>Responsive</b><span>Desktop, tablet & mobile</span></div><div><b>PDF-ready</b><span>Export workflow planned</span></div></section>
