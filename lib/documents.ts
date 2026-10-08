@@ -387,7 +387,9 @@ export function checks(doc: VitaDocument) {
       ...list,
       { label: "Give your document a subject", done: !!c.subject.trim() },
       { label: "Write your main paragraphs", done: c.body.trim().length > 150 },
-      { label: "Add a closing", done: !!c.closing.trim() },
+      ...(doc.document_type === "personal_statement"
+        ? []
+        : [{ label: "Add a closing", done: !!c.closing.trim() }]),
     ];
   return [
     ...list,
@@ -403,7 +405,7 @@ export function checks(doc: VitaDocument) {
   ];
 }
 export function sampleContent(template = "essential"): Content {
-  return {
+  const sample: Content = {
     ...blankContent(template),
     name: "Alex Morgan",
     headline: "Project Coordinator",
@@ -454,4 +456,40 @@ export function sampleContent(template = "essential"): Content {
     body: "I am applying for the Project Coordinator position. The opportunity to help a collaborative team deliver thoughtful, practical work aligns with the experience I have developed in project support.\n\nIn my current role, I coordinate updates across three teams and maintain a shared tracker for deadlines and responsibilities. This has taught me to communicate clearly, anticipate questions, and follow through on commitments.\n\nI would welcome the opportunity to discuss how my skills could support your team.",
     closing: "Kind regards,",
   };
+  if (template === "motivation")
+    return {
+      ...sample,
+      headline: "Graduate study applicant",
+      subject: "Motivation for MSc in Technology and Society",
+      recipient: "Admissions Committee",
+      organization: "Example University",
+      opening: "Dear Admissions Committee,",
+      body: "My interest in technology grew through a university project exploring digital tools for community organisations. I now want to study how those tools can be designed around the people who use them.\n\nWhile coordinating a community skills workshop, I learned to translate technical instructions into practical steps. Listening to participants changed my assumptions about what makes a tool useful and accessible.\n\nI am interested in a programme that combines research methods with community-led design. I would connect these areas to my experience in project coordination and develop the skills to evaluate the impact of digital services.\n\nAfter graduation, I hope to contribute to accessible public-interest technology. I would bring careful organisation, curiosity, and experience working with people from different backgrounds to the programme.",
+    };
+  if (template === "recommendation")
+    return {
+      ...sample,
+      name: "[Recommender name]",
+      headline: "[Role and institution]",
+      email: "recommender@example.com",
+      website: "",
+      subject: "Recommendation for [applicant name]",
+      recipient: "Admissions Committee",
+      organization: "[Institution / programme]",
+      opening: "Dear Admissions Committee,",
+      body: "I have known [applicant name] for [duration] as their [supervisor / lecturer / manager] at [institution]. My assessment is based on our work together in [specific context].\n\nDuring [project or course], I observed [specific action taken by the applicant]. This demonstrated [relevant quality], as shown by [an outcome the recommender can verify].\n\nA further example is [independently observed contribution]. In this situation, the applicant [describe their actions and what the recommender learned about their abilities].\n\n[The recommender should add their own considered recommendation, explain its relevance to the opportunity, and confirm all facts before approval.]",
+      closing: "[Closing and signature to be completed by the recommender]",
+    };
+  if (template === "statement")
+    return {
+      ...sample,
+      headline: "Technology and Society applicant",
+      subject: "Personal statement",
+      recipient: "",
+      organization: "",
+      opening: "",
+      closing: "",
+      body: "At a community workshop, I watched a participant hesitate before using a new digital form. The instructions seemed clear to me, but our conversation revealed assumptions I had overlooked. That experience shaped my interest in designing technology around people.\n\nMy degree in Business and Technology gave me a foundation for understanding how organisations adopt digital tools. For my final project, I explored tools used by community organisations and learned to turn broad questions into manageable research tasks.\n\nWorking as a project coordinator has strengthened my ability to listen, organise information, and follow through. Introducing a shared task tracker taught me that a tool becomes useful only when a team understands how it supports their work.\n\nI want to deepen my understanding of research and inclusive design, then apply those skills to public-interest services. I would bring practical experience, a willingness to examine my assumptions, and a clear commitment to learning from the people a service is meant to support.",
+    };
+  return sample;
 }

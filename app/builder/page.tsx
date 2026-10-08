@@ -643,6 +643,13 @@ export default function Builder() {
                   signature.
                 </div>
               )}
+              {doc.document_type === "personal_statement" && (
+                <div className="notice">
+                  Follow the programme’s prompt and word limit. A personal
+                  statement usually starts with your narrative; recipient,
+                  greeting, and closing fields are optional.
+                </div>
+              )}
               <div className="form-grid">
                 {field(
                   "recipient",

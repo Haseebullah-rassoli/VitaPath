@@ -6,6 +6,8 @@
 
 VitaPath is a responsive application document workspace built with Next.js static export, React, TypeScript, and Supabase. GitHub Pages publishes `main` through the existing Actions workflow. Fonts are bundled locally.
 
+![VitaPath gallery with the supplied HR logo and working template buttons](docs/vitapath-gallery.jpg)
+
 ## Included
 
 - Eight distinct, single-column CV layouts: Essential, Modern, Executive, European, Gulf/GCC, Scholar, Graduate, and Academic.
