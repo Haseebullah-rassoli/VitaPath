@@ -50,17 +50,19 @@ The connected project is `hudtdmerjzqmyvgwajub`. `.env.example` and `lib/supabas
 
 `supabase/schema.sql` documents the current schema. The dated migration adds personal statements, validation, an owner/timestamp index, server-managed modification timestamps, and least-privilege grants. Signup trigger functions are in a private schema with direct execution revoked. Do not run the reference snapshot over the existing database.
 
-### Email launch configuration requiring owner verification
+### Email launch configuration
 
-The connected Auth settings report that email signup is enabled and confirmation is required. The connector does not expose the project's redirect allowlist or SMTP configuration. Public registration and reset-email delivery have therefore **not been verified end-to-end**.
+Email signup is enabled and confirmation is required. On 8 October 2026, the production Auth URLs were corrected in the Supabase dashboard and verified after saving. The default Site URL had still pointed to localhost and the redirect allowlist was empty.
 
-In the [Auth URL settings](https://supabase.com/dashboard/project/hudtdmerjzqmyvgwajub/auth/url-configuration):
+The saved [Auth URL settings](https://supabase.com/dashboard/project/hudtdmerjzqmyvgwajub/auth/url-configuration) are:
 
 - Site URL: `https://haseebullah-rassoli.github.io/VitaPath/`
 - Allowed redirect URL: `https://haseebullah-rassoli.github.io/VitaPath/login/`
-- For local development only, allow `http://localhost:3000/login/`.
+- No wildcard or local-development redirect was added to the production project.
 
-Configure an SMTP provider for public email delivery. Supabase's default sender is intended for development and restricts recipients to project-team addresses. Keep email confirmation enabled. Then test a new real account, its confirmation link, sign-in, cloud save/reopen, and password recovery. Never commit SMTP credentials. See [Supabase email setup](https://supabase.com/docs/guides/auth/auth-smtp) and [redirect URLs](https://supabase.com/docs/guides/auth/redirect-urls).
+**Remaining launch blocker:** the dashboard confirms custom SMTP is disabled. Supabase's default sender restricts recipients to project-team addresses, so public registration and reset-email delivery are **not ready and have not been verified end-to-end**. Connect the owner's email delivery provider and verified sender in [SMTP Settings](https://supabase.com/dashboard/project/hudtdmerjzqmyvgwajub/auth/smtp), using its host, port, username and password. Enter credentials directly in the service; never commit them or send them in chat. Keep email confirmation enabled.
+
+After SMTP is connected, test a new real account, its confirmation link, sign-in, cloud save/reopen, and password recovery. Browser drafts, document editing, printing, contact requests and the Support centre remain available while email setup is pending. See [Supabase email setup](https://supabase.com/docs/guides/auth/auth-smtp) and [redirect URLs](https://supabase.com/docs/guides/auth/redirect-urls).
 
 ## Support operations and Premium interest
 

@@ -14,7 +14,7 @@ Never commit CV data, passwords, private credentials, service-role keys, or SMTP
 
 ## Operational limitations
 
-GitHub Pages controls HTTP response headers; this static repository does not claim to configure a WAF, server rate limiting, CSP response headers, or infrastructure backups. Supabase manages authentication rate limits and service security. Verify production email delivery and allowed redirects as described in README before announcing public registration.
+GitHub Pages controls HTTP response headers; this static repository does not claim to configure a WAF, server rate limiting, CSP response headers, or infrastructure backups. Supabase manages authentication rate limits and service security. The production Site URL and exact login callback were saved and verified on 8 October 2026. Custom SMTP is still disabled; connect the owner's verified email provider and test delivery as described in README before announcing public registration.
 
 Browser local storage is not private from another person using that browser profile. Signing out does not delete separate browser drafts. Account documents are not end-to-end encrypted; project administrators can administer the database. Be explicit about these limits in user-facing privacy information.
 
