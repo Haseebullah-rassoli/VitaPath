@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { templateHref } from "../lib/routes";
 import { Header, Footer } from "../components/shell";
 import { Icon } from "../components/icon";
 import { DocumentPreview } from "../components/document-preview";
@@ -168,8 +169,7 @@ export default function Home() {
                   "statement",
                 ],
               ].map(([icon, title, text, template]) => (
-                <Link
-                  href={`/builder?template=${template}`}
+                <a href={templateHref(template)}
                   className="tool-card"
                   key={template}
                 >
@@ -181,7 +181,7 @@ export default function Home() {
                   <span className="text-link">
                     Start writing <Icon name="arrow" size={16} />
                   </span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>

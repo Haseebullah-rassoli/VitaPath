@@ -4,23 +4,12 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { createClient } from "../lib/supabase/client";
 import { Icon } from "./icon";
+import { basePath, templateHref } from "../lib/routes";
 export function Brand() {
   return (
     <Link href="/" className="brand" aria-label="VitaPath home">
       <span className="brand-mark">
-        <svg viewBox="0 0 40 44" fill="none" aria-hidden="true">
-          <path
-            d="m6 13 14 4 14-4v12c0 8-14 15-14 15S6 33 6 25Z"
-            stroke="currentColor"
-            strokeWidth="2"
-          />
-          <path d="m8 4 5 5 7-7 7 7 5-5-2 9H10Z" fill="currentColor" />
-          <path
-            d="m12 21v9m0-4h6m0-5v9m5 0v-9h3c4 0 4 5 0 5h-3m3 0 4 4"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-        </svg>
+        <img src={`${basePath}/hr-crown-shield.png`} width={56} height={56} alt="HR gold crown and shield logo" decoding="async" />
       </span>
       <span>
         Vita<span className="brand-light">Path</span>
@@ -111,7 +100,7 @@ export function Footer() {
         <div>
           <b>CREATE</b>
           <Link href="/builder">Resume & CV</Link>
-          <Link href="/builder?template=scholar">Scholarship CV</Link>
+          <a href={templateHref("scholar")}>Scholarship CV</a>
           <Link href="/templates?category=Letters">Application letters</Link>
         </div>
         <div>

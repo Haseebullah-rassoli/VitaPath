@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { templateHref } from "../../lib/routes";
 import { Header, Footer } from "../../components/shell";
 import { Icon } from "../../components/icon";
 const guides = [
@@ -166,12 +166,12 @@ export default function Guides() {
                   <p>{g.example}</p>
                 </div>
                 <div className="guide-bottom">
-                  <Link
-                    href={`/builder?template=${g.template}`}
+                  <a
+                    href={templateHref(g.template)}
                     className="text-link"
                   >
                     Start with this template <Icon name="arrow" size={17} />
-                  </Link>
+                  </a>
                   <a href={g.url} target="_blank" rel="noopener noreferrer">
                     Further reading: {g.source} ↗
                   </a>

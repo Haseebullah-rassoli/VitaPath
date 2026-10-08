@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   description:
     "Build professional resumes, European and Gulf CVs, scholarship applications, and letters. Guided editing, live previews, private account storage, and PDF printing.",
-  icons: { icon: "/VitaPath/favicon.svg" },
+  icons: { icon: "/VitaPath/hr-crown-shield.png", apple: "/VitaPath/hr-crown-shield.png" },
   openGraph: {
     title: "VitaPath — Build your path. Present your best.",
     description: "Thoughtful documents for a world of possibilities.",

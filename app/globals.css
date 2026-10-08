@@ -1,12 +1,12 @@
 :root {
-  --ink: #192f32;
-  --muted: #657674;
-  --teal: #1e6258;
-  --dark: #173e3b;
-  --sage: #e9f0e8;
-  --paper: #fafbf8;
-  --line: #dfe5df;
-  --cream: #f3f1e9;
+  --ink: #182b46;
+  --muted: #617086;
+  --teal: #315b87;
+  --dark: #152e50;
+  --sage: #eaf0f7;
+  --paper: #f8f9fc;
+  --line: #dfe5ee;
+  --cream: #f8f3e9;
   --radius: 14px;
   --sans: "DM Sans Variable", Arial, sans-serif;
   --heading: "Manrope Variable", Arial, sans-serif;
@@ -3342,3 +3342,83 @@ label small {
     text-decoration: none !important;
   }
 }
+
+/* VitaPath gold crown identity and clear, touch-friendly actions. */
+:root { --gold: #e9bd62; --gold-ink: #916615; }
+.site-header { position: sticky; top: 0; border-bottom-color: #e6eaf0; backdrop-filter: blur(14px); }
+.brand { gap: 11px; }
+.brand-mark { width: 54px; height: 54px; display: block; flex-shrink: 0; }
+.brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+.brand small { color: #68778c; }
+.button { border-radius: 10px; min-height: 44px; box-shadow: 0 3px 9px #152e5010; transition: background .18s, border-color .18s, box-shadow .18s, transform .18s; }
+.button:hover { background: #244770; box-shadow: 0 6px 17px #152e5024; }
+.button:active { transform: translateY(0); box-shadow: none; }
+.button.secondary:hover { background: #f1f5fa; border-color: #becbdd; }
+.button svg { transition: transform .18s; }
+.button:hover svg { transform: translateX(2px); }
+.button.ghost, .button.ghost:hover { box-shadow: none; }
+.hero-copy .eyebrow { color: #826124; }
+.hero-copy .status-dot { background: #c7983e; }
+.hero-copy h1 em { color: #315b87; }
+.hero-actions .button:first-child, .closing-cta .button { background: var(--gold); color: #1c2a41; border-color: #d9ab4e; box-shadow: 0 5px 14px #be924323; }
+.hero-actions .button:first-child:hover, .closing-cta .button:hover { background: #f0cc81; border-color: #c69c4b; box-shadow: 0 8px 19px #be92432e; }
+.hero-stage { background: #edf2f9; }
+.stage-grid { background-image: radial-gradient(#a9bdd64f .8px, transparent .8px); }
+.stage-caption { color: #6c819a; }
+.note-icon { background: #fcf3df; color: #916615; }
+.floating-note { border-color: #e3d9c4; }
+.benefit-bar { background: #fafbfd; }
+.benefit-inner { color: #4d617b; }
+.benefit-inner svg { color: #8e712f; }
+.template-card { border: 1px solid #e0e6ef; border-radius: 13px; padding: 8px; background: #fff; transition: border-color .18s, box-shadow .18s, transform .18s; }
+.template-card:hover, .template-card:focus-within { border-color: #cbb780; box-shadow: 0 10px 27px #1c335710; transform: translateY(-3px); }
+.template-art { border-radius: 8px; }
+.template-info { padding: 17px 9px 10px; }
+.template-info p { min-height: 57px; font-size: 12px; }
+.button.template-use { display: flex; width: 100%; min-height: 44px; justify-content: space-between; border-radius: 8px; padding: 12px 14px; color: #fff; font-size: 12px; font-weight: 650; margin-top: 16px; }
+.template-overlay { background: #152e50e8; font-size: 11px; border-radius: 7px; }
+.template-badge { font-size: 9px; color: #42546c; }
+.filter-tabs button { min-height: 40px; border-radius: 8px; font-weight: 550; }
+.filter-tabs button:hover { border-color: #c7a764; }
+.filter-tabs button.selected { box-shadow: 0 2px 6px #152e5020; }
+.tool-card { border-radius: 12px; border-color: #e0e5ef; }
+.tool-card:hover { border-color: #bda66f; box-shadow: 0 9px 26px #162d4e0b; }
+.tool-card .tool-icon { background: #eaf0f9; color: #426d9a; }
+.privacy-banner { background: #152e50; border: 1px solid #264266; }
+.privacy-banner .eyebrow { color: #ebca87; }
+.privacy-banner p { color: #d0d9e7; }
+.privacy-emblem { color: #e4bd6c; }
+.auth-art { background: #edf1f8; }
+.auth-paper { box-shadow: 15px 18px 0 #dde5f1; }
+.footer-bottom, .quiet { color: #65758a; }
+.editor-sidebar { background: #f7f9fc; }
+.editor-sidebar nav button.current { background: #e7edf7; color: #244e7d; }
+.editor-sidebar nav button.current > span { color: #5379a5; }
+.workspace { background: #eef2f8; }
+.workspace-header .brand-mark { width: 43px; height: 43px; }
+.account-prompt { background: #eff3fa; border-color: #d9e3f0; }
+.document-card { border-radius: 12px; }
+.document-card-top { background: #f3f6fb; color: #3e5a7b; }
+@media(max-width:1180px) { .nav-inner { gap: 20px; } .nav-links { gap: 18px; } .nav-actions { gap: 15px; } }
+@media(max-width:800px) { .button { min-height: 44px; } .workspace-header .button { min-height: 36px; } }
+@media(max-width:640px) {
+ .brand { gap: 8px; font-size: 23px; }
+ .brand-mark { width: 46px; height: 46px; }
+ .nav-inner { gap: 9px; }
+ .nav-actions { gap: 7px; }
+ .nav-actions > .button { min-height: 40px; }
+ .template-card { padding: 6px; border-radius: 11px; }
+ .template-grid { gap: 22px 12px; }
+ .template-art { height: 218px; padding-inline: 7px; }
+ .template-info { padding: 14px 5px 6px; }
+ .template-info h3 { font-size: 13px; }
+ .template-info p { font-size: 11px; min-height: 72px; }
+ .template-badge { font-size: 6px; left: 7px; padding: 3px 4px; }
+ .button.template-use { min-height: 44px; padding: 10px; font-size: 10px; gap: 5px; margin-top: 13px; }
+ .button.template-use svg { width: 15px; }
+ .filter-tabs button { min-height: 40px; font-size: 10px; }
+ .workspace-header .brand-mark { width: 39px; height: 39px; }
+ .workspace-header .brand { font-size: 21px; }
+ .document-name { padding-left: 9px; }
+}
+@media(prefers-reduced-motion:reduce) { .button, .button svg, .template-card, .tool-card { transition: none; } }
