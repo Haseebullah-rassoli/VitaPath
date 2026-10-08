@@ -3445,7 +3445,7 @@ label small {
 .contact-form label small { font-weight: 400; margin-top: 5px; color: var(--muted); }
 .contact-form textarea { resize: vertical; min-height: 160px; }
 .contact-form .contact-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-.contact-form .consent-line { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; font-weight: 400; color: var(--muted); line-height: 1.7; margin: 22px 0; }
+.contact-form .consent-line { display: flex; flex-direction: row; align-items: flex-start; gap: 10px; font-size: 12px; font-weight: 400; color: var(--muted); line-height: 1.7; margin: 22px 0; }
 .consent-line input { width: 17px; height: 17px; margin: 3px 0 0; flex-shrink: 0; accent-color: var(--dark); }
 .consent-line a { text-decoration: underline; color: var(--dark); }
 .contact-form > .quiet { margin: 16px 0 0; font-size: 12px; line-height: 1.7; }

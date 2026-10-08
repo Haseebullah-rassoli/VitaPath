@@ -8,6 +8,8 @@ VitaPath is a responsive application document workspace built with Next.js stati
 
 ![VitaPath gallery with the supplied HR logo and working template buttons](docs/vitapath-gallery.jpg)
 
+![Free account and Premium interest page](docs/vitapath-free-premium.jpg)
+
 ## Included
 
 - Eight distinct, single-column CV layouts: Essential, Modern, Executive, European, Gulf/GCC, Scholar, Graduate, and Academic.
