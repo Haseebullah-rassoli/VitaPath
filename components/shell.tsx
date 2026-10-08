@@ -45,9 +45,9 @@ export function Header() {
           >
             {[
               ["/templates", "Templates"],
-              ["/builder", "Resume builder"],
               ["/guides", "Writing guides"],
-              ["/dashboard", "My documents"],
+              ["/pricing", "Free & Premium"],
+              ["/support", "Support"],
             ].map(([href, label]) => (
               <Link
                 href={href}
@@ -69,8 +69,8 @@ export function Header() {
             >
               {signed ? "My account" : "Sign in"}
             </Link>
-            <Link className="button small" href="/builder">
-              Get started <Icon name="arrow" size={16} />
+            <Link className="button small" href={signed ? "/dashboard" : "/signup"}>
+              {signed ? "My workspace" : "Create account"} <Icon name="arrow" size={16} />
             </Link>
             <button
               className="menu-button"
@@ -112,7 +112,10 @@ export function Footer() {
         <div>
           <b>VITAPATH</b>
           <Link href="/privacy">Privacy & your data</Link>
-          <Link href="/login?mode=signup">Create an account</Link>
+          <Link href="/signup">Create an account</Link>
+          <Link href="/pricing">Free & Premium</Link>
+          <Link href="/support">Support centre</Link>
+          <Link href="/contact">Contact us</Link>
           <span>Built by Haseebullah Rassoli</span>
         </div>
       </div>

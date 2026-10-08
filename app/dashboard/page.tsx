@@ -265,7 +265,7 @@ export default function Dashboard() {
                 Sign in to save account copies and open them on another device.
               </p>
             </div>
-            <Link href="/login?mode=signup" className="button secondary small">
+            <Link href="/signup" className="button secondary small">
               Create an account
             </Link>
             <Link href="/login" className="text-link">
@@ -304,6 +304,10 @@ export default function Dashboard() {
             </div>
           </div>
         )}
+        <div className="workspace-plan-strip">
+          <div><span className="plan-pill">FREE PLAN</span><span>12 templates, PDF printing, and editable backups.</span></div>
+          <div><Link href="/pricing">Explore Premium</Link><Link href="/support#requests">My support requests</Link></div>
+        </div>
         {profile && (
           <section className="profile-editor">
             <h2>Your profile</h2>

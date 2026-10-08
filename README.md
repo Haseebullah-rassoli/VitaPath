@@ -18,6 +18,8 @@ VitaPath is a responsive application document workspace built with Next.js stati
 - Explicit cloud saving with optimistic concurrency protection against overwriting another tab's changes.
 - Browser print-to-PDF with selectable text, multi-page flow, and no editor controls in output.
 - Writing guides, a practical content checklist (not an ATS score), and an accurate privacy page.
+- Dedicated free-account signup, email-confirmation guidance, contact forms, searchable support articles, and private account request history.
+- Free/Premium plan comparison with an honest Premium interest form. No paid plan, checkout, or billing entitlement is active.
 
 ## Develop and verify
 
@@ -57,6 +59,14 @@ In the [Auth URL settings](https://supabase.com/dashboard/project/hudtdmerjzqmyv
 - For local development only, allow `http://localhost:3000/login/`.
 
 Configure an SMTP provider for public email delivery. Supabase's default sender is intended for development and restricts recipients to project-team addresses. Keep email confirmation enabled. Then test a new real account, its confirmation link, sign-in, cloud save/reopen, and password recovery. Never commit SMTP credentials. See [Supabase email setup](https://supabase.com/docs/guides/auth/auth-smtp) and [redirect URLs](https://supabase.com/docs/guides/auth/redirect-urls).
+
+## Support operations and Premium interest
+
+The `/contact/` form writes to `public.support_requests`. Signed-out visitors can insert only; signed-in users can read only their own requests on `/support/`. The database rejects forged ownership, client-supplied status or replies, oversized fields, and more than five requests per email/account per hour. A global limit of 100 per hour bounds the public queue. Contact email ownership is not verified; do not use these submissions to authorize account changes.
+
+To handle requests, open **Table Editor → support_requests** in the connected Supabase project. Filter by `status = open` or `category = premium`. Set `admin_reply` and update `status` to `in_review`, `answered`, or `closed`. The submitting account can refresh Support to read the reply. Signed-out visitors cannot retrieve requests; a project administrator may respond using their supplied email after checking the request. The form does not send automated emails or attach CV data. Review queue capacity and add a verified CAPTCHA before promoting the form at high volume.
+
+`/pricing/` lists all currently available free features and clearly marks Premium as in planning. Premium interest uses the same support queue. No price, paid feature access, recurring charge, billing provider, or fulfilment promise has been invented. A production paid tier requires owner-approved pricing, a payment provider, verified webhooks, and server-controlled entitlements before checkout can launch.
 
 ## Scope and limitations
 

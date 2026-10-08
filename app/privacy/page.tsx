@@ -45,6 +45,9 @@ export default function Privacy() {
             browser copies, downloads, and service backups may remain. This
             version does not include self-service account deletion.
           </p>
+          <h2>Contact and support requests</h2>
+          <p>When you send a contact form, VitaPath stores your name, email address, category, subject, message, and timestamps in Supabase. If you are signed in, the request is linked to your account so you can view its status and replies. Other ordinary users cannot read your requests. Project administrators can review and respond to the support queue. Messages are not posted publicly, and your CV is not attached automatically.</p>
+          <p>Requests sent without an account cannot be viewed in an account history. The team may use the supplied email address to respond. Premium interest requests are stored in the same queue; they do not start a paid subscription. Ask through Contact if you want a support message reviewed or removed.</p>
           <h2>Hosting and service providers</h2>
           <p>
             The website is hosted on GitHub Pages and account data is stored
@@ -63,7 +66,7 @@ export default function Privacy() {
           <h2>About this service</h2>
           <p>
             VitaPath is maintained by Haseebullah Rassoli. For a privacy
-            concern, contact the maintainer through the{" "}
+            concern, use the <Link href="/contact?category=privacy">private contact form</Link>. You can also visit the{" "}
             <a
               href="https://github.com/Haseebullah-rassoli/VitaPath"
               target="_blank"

@@ -19,3 +19,9 @@ GitHub Pages controls HTTP response headers; this static repository does not cla
 Browser local storage is not private from another person using that browser profile. Signing out does not delete separate browser drafts. Account documents are not end-to-end encrypted; project administrators can administer the database. Be explicit about these limits in user-facing privacy information.
 
 For future changes, run Supabase security advisors and transactionally test cross-user read, write, ownership transfer, and deletion. Never test against or print real users' document contents. Do not expose secrets or personal data in public issue reports.
+
+## Contact requests
+
+Support requests use insert-only public column grants and owner-only authenticated reads. Status and replies are writable only by project administration. Private trigger functions enforce ownership, validation, and submission limits, and have no client EXECUTE grants. Contact email addresses are unverified and must never serve as proof of account ownership. No payment or Premium entitlement can be activated from a contact request.
+
+The Auth advisor currently reports that leaked-password protection is disabled. Enable it in the project’s Auth settings if supported by its plan; email confirmation remains required.

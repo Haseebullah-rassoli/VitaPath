@@ -235,6 +235,10 @@ export default function Home() {
             </li>
           </ol>
         </section>
+        <section className="container home-service-strip">
+          <div><span className="eyebrow">YOUR FREE WORKSPACE</span><h2>One account. Every next step.</h2><p>Save your documents, find practical answers, and keep your support requests together.</p></div>
+          <div><Link href="/signup" className="button">Create a free account <Icon name="arrow" size={17}/></Link><Link href="/pricing" className="text-link">Explore Free & Premium</Link><Link href="/support" className="text-link">Visit the Support centre</Link></div>
+        </section>
         <section className="privacy-banner container">
           <span className="privacy-emblem">
             <Icon name="shield" size={46} />
