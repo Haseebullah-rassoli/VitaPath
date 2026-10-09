@@ -3248,6 +3248,7 @@ label small {
   .modal-backdrop,
   .site-header,
   .site-footer,
+  .service-notice,
   .skip-link {
     display: none !important;
   }
@@ -3594,4 +3595,43 @@ label small {
  .home-service-strip h2 { font-size: 29px; }
  .home-service-strip p { font-size: 14px; }
  .signup-steps { gap: 10px; font-size: 9px; }
+}
+
+/* Temporary account notice; browser drafting and PDF export stay available. */
+.service-notice {
+  background: #fff7e8;
+  border-bottom: 1px solid #ead8b7;
+  color: #263950;
+}
+.service-notice-inner {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 15px 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 17px;
+}
+.service-notice-icon { color: #9a6725; }
+.service-notice-copy strong { display: block; font-size: 14px; line-height: 1.5; }
+.service-notice-copy p { margin: 3px 0 0; color: #566174; font-size: 13px; line-height: 1.55; }
+.service-notice-action { white-space: nowrap; min-height: 44px; }
+.service-notice-dismiss {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #665947;
+}
+.service-notice-dismiss:hover { background: #f3e8d3; border-color: #e4d0ac; }
+@media (max-width: 760px) {
+  .service-notice-inner { grid-template-columns: minmax(0, 1fr) auto; gap: 12px 8px; }
+  .service-notice-icon { display: none; }
+  .service-notice-copy { grid-column: 1; grid-row: 1; }
+  .service-notice-action { grid-column: 1 / -1; grid-row: 2; justify-self: start; }
+  .service-notice-dismiss { grid-column: 2; grid-row: 1; align-self: start; }
 }

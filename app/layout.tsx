@@ -2,6 +2,7 @@ import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/manrope";
 import "./globals.css";
 import type { Metadata } from "next";
+import { ServiceNotice } from "../components/service-notice";
 export const metadata: Metadata = {
   metadataBase: new URL("https://haseebullah-rassoli.github.io/VitaPath/"),
   title: {
@@ -22,7 +23,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ServiceNotice />
+        {children}
+      </body>
     </html>
   );
 }
